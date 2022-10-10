@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 
+import { getRoles } from '~/testUtils';
 import { Button } from '.';
-import { getRoles } from '../../testUtils';
 
 describe('Button', () => {
   test('唯一の role として button を持つ', () => {
