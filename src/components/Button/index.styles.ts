@@ -51,7 +51,7 @@ export const themes: Record<Theme, SerializedStyles> = {
       color: ${colors.gray};
       border-color: ${colors.gray};
     }
-  `
+  `,
 } as const;
 
 export const sizes: Record<Size, SerializedStyles> = {
@@ -70,12 +70,12 @@ export const sizes: Record<Size, SerializedStyles> = {
     padding: 0 14px;
     font-weight: 500;
     font-size: 12px;
-  `
+  `,
 } as const;
 
 export const displays: Record<Display, SerializedStyles> = {
   inline: css``,
   fill: css`
     width: 100%;
-  `
+  `,
 } as const;

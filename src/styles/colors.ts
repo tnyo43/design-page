@@ -7,5 +7,5 @@ export const colors = {
   darkGray: 'var(--c-dark-gray)',
   gray: 'var(--c-gray)',
   lightGray: 'var(--c-light-gray)',
-  white: 'var(--c-white)'
+  white: 'var(--c-white)',
 };

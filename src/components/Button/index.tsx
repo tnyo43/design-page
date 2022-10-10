@@ -6,7 +6,7 @@ import {
   commonStyle,
   displays,
   sizes,
-  themes
+  themes,
 } from './index.styles';
 
 export const Button: FC<
@@ -22,7 +22,7 @@ export const Button: FC<
       commonStyle,
       displays[display || 'inline'],
       sizes[size || 'normal'],
-      themes[theme || 'primary']
+      themes[theme || 'primary'],
     ]}
   />
 );
