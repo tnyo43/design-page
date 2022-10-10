@@ -1,0 +1,11 @@
+body {
+  --c-red: #f42623;
+  --c-red-secondary: #fc807e;
+  --c-blue: #2373f4;
+  --c-blue-secondary: #7eaffc;
+  --c-black: #171717;
+  --c-dark-gray: #4d4d4d;
+  --c-gray: #8c8c8c;
+  --c-light-gray: #cccccc;
+  --c-white: #ffffff;
+}
