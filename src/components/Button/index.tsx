@@ -11,7 +11,7 @@ import {
 
 export const Button: FC<
   Omit<ComponentPropsWithoutRef<'button'>, 'style'> & {
-    theme: Theme;
+    theme?: Theme;
     size?: Size;
     display?: Display;
   }
@@ -22,7 +22,7 @@ export const Button: FC<
       commonStyle,
       displays[display || 'inline'],
       sizes[size || 'normal'],
-      themes[theme]
+      themes[theme || 'primary']
     ]}
   />
 );
