@@ -1,4 +1,5 @@
 import { css, SerializedStyles } from '@emotion/react';
+import { colors } from '~/styles/colors';
 
 export type Theme = 'primary' | 'alert' | 'mono-strong' | 'mono-weak';
 export type Size = 'normal' | 'small';
@@ -18,37 +19,37 @@ export const commonStyle = css`
 
 export const themes: Record<Theme, SerializedStyles> = {
   primary: css`
-    background-color: var(--c-blue);
-    color: var(--c-white);
+    background-color: ${colors.blue};
+    color: ${colors.white};
 
     &:hover {
-      background-color: var(--c-blue-secondary);
+      background-color: ${colors.blueSecondary};
     }
   `,
   alert: css`
-    background-color: var(--c-red);
-    color: var(--c-white);
+    background-color: ${colors.red};
+    color: ${colors.white};
 
     &:hover {
-      background-color: var(--c-red-secondary);
+      background-color: ${colors.redSecondary};
     }
   `,
   'mono-strong': css`
-    background-color: var(--c-black);
-    color: var(--c-white);
+    background-color: ${colors.black};
+    color: ${colors.white};
 
     &:hover {
-      background-color: var(--c-dark-gray);
+      background-color: ${colors.darkGray};
     }
   `,
   'mono-weak': css`
-    background-color: var(--c-white);
-    color: var(--c-black);
-    border-color: var(--c-black);
+    background-color: ${colors.white};
+    color: ${colors.black};
+    border-color: ${colors.black};
 
     &:hover {
-      color: var(--c-gray);
-      border-color: var(--c-gray);
+      color: ${colors.gray};
+      border-color: ${colors.gray};
     }
   `
 } as const;
