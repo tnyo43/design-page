@@ -1,3 +1,4 @@
+import React from 'react';
 import { ComponentPropsWithoutRef, FC } from 'react';
 import {
   Display,
@@ -9,20 +10,25 @@ import {
   themes,
 } from './index.styles';
 
-export const Button: FC<
-  Omit<ComponentPropsWithoutRef<'button'>, 'style'> & {
-    theme?: Theme;
-    size?: Size;
-    display?: Display;
-  }
-> = ({ theme, size, display, ...props }) => (
-  <button
-    {...props}
-    css={[
-      commonStyle,
-      displays[display || 'inline'],
-      sizes[size || 'normal'],
-      themes[theme || 'primary'],
-    ]}
-  />
+type Props = Omit<ComponentPropsWithoutRef<'button'>, 'style'> & {
+  theme?: Theme;
+  size?: Size;
+  display?: Display;
+};
+
+export const Button: FC<Props> = React.forwardRef<HTMLButtonElement, Props>(
+  ({ theme, size, display, ...props }, ref) => (
+    <button
+      {...props}
+      ref={ref}
+      css={[
+        commonStyle,
+        displays[display || 'inline'],
+        sizes[size || 'normal'],
+        themes[theme || 'primary'],
+      ]}
+    />
+  )
 );
+
+Button.displayName = 'Button';
