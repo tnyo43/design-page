@@ -1,4 +1,3 @@
-const react = require('@vitejs/plugin-react');
 const path = require('path');
 
 module.exports = {
@@ -10,30 +9,19 @@ module.exports = {
   ],
   framework: '@storybook/react',
   core: {
-    builder: '@storybook/builder-vite',
+    builder: 'webpack5',
   },
   features: {
     storyStoreV7: true,
   },
-  async viteFinal(config) {
-    config.plugins = config.plugins.filter(
-      (plugin) =>
-        !(Array.isArray(plugin) && plugin[0].name.includes('vite:react'))
-    );
-
-    config.plugins.push(
-      react({
-        exclude: [/node_modules/],
-        jsxImportSource: '@emotion/react',
-        babel: {
-          plugins: ['@emotion/babel-plugin'],
-        },
-      })
-    );
-
-    config.esbuild = {
-      logOverride: { 'this-is-undefined-in-esm': 'silent' },
-    };
+  async webpackFinal(config) {
+    config.module.rules.push({
+      test: /\.(ts|tsx)$/,
+      loader: require.resolve('babel-loader'),
+      options: {
+        presets: [require.resolve('@emotion/babel-preset-css-prop')],
+      },
+    });
 
     config.resolve.alias = {
       ...config.resolve.alias,
