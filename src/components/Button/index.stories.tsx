@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import CreateIcon from '../../assets/create.svg';
+import { ReactComponent as CreateIcon } from '../../assets/create.svg';
 
 import { Button } from '.';
 

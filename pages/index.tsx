@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 
 import { Button } from '../src/components/Button';
-import CreateIcon from '../src/assets/create.svg';
+import { ReactComponent as CreateIcon } from '../src/assets/create.svg';
 
 const Home: NextPage = () => {
   return (
