@@ -1,5 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ReactComponent as SearchIcon } from '../../assets/search.svg';
 
 import { Label } from '.';
 
@@ -19,4 +20,14 @@ export const Required = Template.bind({});
 Required.args = {
   children: 'メールアドレス',
   required: true,
+};
+
+export const WithIcon = Template.bind({});
+WithIcon.args = {
+  children: (
+    <>
+      <SearchIcon />
+      検索
+    </>
+  ),
 };

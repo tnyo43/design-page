@@ -4,6 +4,12 @@ import { colors } from '~/styles/colors';
 export const common = css`
   font-weight: 700;
   font-size: 0.8rem;
+
+  svg {
+    height: 1em;
+    vertical-align: -0.125em;
+    margin-right: 0.2em;
+  }
 `;
 
 export const required = css`
