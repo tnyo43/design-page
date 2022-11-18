@@ -9,15 +9,13 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3
         with:
-          path: ${YARN_CACHE_FOLDER}
-          key: ${{ runner.os }}-yarn-cache-v1
+          path: node_modules
+          key: ${{ matrix.os }}-node-v${{ matrix.node }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
       - name: Install Dependencies
         run: yarn install
       - name: Run test
         run: yarn test
       - name: Run building test
         run: yarn build
-env:
-  YARN_CACHE_FOLDER: .cache/yarn
