@@ -19,4 +19,9 @@ export const common = css`
     border-color: ${colors.blue};
     outline: 2px solid ${colors.blueSecondary};
   }
+
+  :disabled {
+    background-color: ${colors.lightGray};
+    cursor: not-allowed;
+  }
 `;

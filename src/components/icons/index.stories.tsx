@@ -14,3 +14,9 @@ export const Default = Template.bind({});
 Default.args = {
   placeholder: '入力してください...',
 };
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  placeholder: '入力してください...',
+  disabled: true,
+};
