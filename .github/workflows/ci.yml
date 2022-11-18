@@ -14,7 +14,7 @@ jobs:
           path: node_modules
           key: ${{ matrix.os }}-node-v${{ matrix.node }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
       - name: Install Dependencies
-        run: yarn install
+        run: yarn --check-files --frozen-lockfile --non-interactive
       - name: Run test
         run: yarn test
       - name: Run building test
