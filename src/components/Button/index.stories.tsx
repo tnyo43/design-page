@@ -1,5 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ReactComponent as CreateIcon } from '../../assets/create.svg';
 
 import { Button } from '.';
 
@@ -47,4 +48,14 @@ export const Weak = Template.bind({});
 Weak.args = {
   children: 'キャンセル',
   theme: 'mono-weak',
+};
+
+export const WithSVG = Template.bind({});
+WithSVG.args = {
+  children: (
+    <>
+      <CreateIcon />
+      Create
+    </>
+  ),
 };

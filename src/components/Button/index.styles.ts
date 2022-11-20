@@ -15,6 +15,13 @@ export const commonStyle = css`
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+
+  svg {
+    height: 1.5em;
+    width: 1.5em;
+    vertical-align: -0.375em;
+    margin-right: 0.4em;
+  }
 `;
 
 export const themes: Record<Theme, SerializedStyles> = {
@@ -25,6 +32,10 @@ export const themes: Record<Theme, SerializedStyles> = {
     &:hover {
       background-color: ${colors.blueSecondary};
     }
+
+    svg path {
+      fill: ${colors.white};
+    }
   `,
   alert: css`
     background-color: ${colors.red};
@@ -33,6 +44,10 @@ export const themes: Record<Theme, SerializedStyles> = {
     &:hover {
       background-color: ${colors.redSecondary};
     }
+
+    svg path {
+      fill: ${colors.white};
+    }
   `,
   'mono-strong': css`
     background-color: ${colors.black};
@@ -40,6 +55,10 @@ export const themes: Record<Theme, SerializedStyles> = {
 
     &:hover {
       background-color: ${colors.darkGray};
+    }
+
+    svg path {
+      fill: ${colors.white};
     }
   `,
   'mono-weak': css`
@@ -50,6 +69,10 @@ export const themes: Record<Theme, SerializedStyles> = {
     &:hover {
       color: ${colors.gray};
       border-color: ${colors.gray};
+    }
+
+    svg path {
+      fill: ${colors.black};
     }
   `,
 } as const;
